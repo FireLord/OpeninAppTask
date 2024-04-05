@@ -107,6 +107,37 @@ struct DashboardView: View {
                         }
                         
                         // View All Links
+                        Button {
+                            
+                        } label: {
+                            OutlineButtonBig(title: "View all Links", icon: "linkIcon")
+                        }
+                        
+                        // Whatsapp Button
+                        Button {
+                            print("Hi! reach out to me on whatspp")
+                        } label: {
+                            RoundedButtonBig(
+                                title: "Talk with us",
+                                icon: "whatsappIcon",
+                                backgroundColor: Color(hex: 0x4AD15F, alpha: 0.12),
+                                strokeColor: Color(hex: 0x4AD15F, alpha: 0.32))
+                        }
+                        .padding(.top)
+                        .padding()
+                        
+                        // FAQ Button
+                        Button {
+                            
+                        } label: {
+                            RoundedButtonBig(
+                                title: "Frequently Asked Questions",
+                                icon: "faqIcon",
+                                backgroundColor: Color(hex: 0xE8F1FF),
+                                strokeColor: Color(hex: 0x0E6FFF, alpha: 0.32)
+                            )
+                        }
+                        .padding(.horizontal)
                         
                     }
                 }
