@@ -12,6 +12,7 @@
 		B26885752BC01F6C001C5A83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B26885742BC01F6C001C5A83 /* Assets.xcassets */; };
 		B26885782BC01F6C001C5A83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B26885772BC01F6C001C5A83 /* Preview Assets.xcassets */; };
 		B26885862BC0372E001C5A83 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26885852BC0372E001C5A83 /* Color.swift */; };
+		B284E72F2BC07C7B0081F1F8 /* BottomNavIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B284E72E2BC07C7B0081F1F8 /* BottomNavIconView.swift */; };
 		B2DF2ADA2BC0385E003FB000 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AD92BC0385E003FB000 /* FontExtension.swift */; };
 		B2DF2ADD2BC038BA003FB000 /* Figtree-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2DF2ADB2BC038BA003FB000 /* Figtree-Black.ttf */; };
 		B2DF2ADE2BC038BA003FB000 /* Figtree-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2DF2ADC2BC038BA003FB000 /* Figtree-Bold.ttf */; };
@@ -36,6 +37,7 @@
 		B26885742BC01F6C001C5A83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B26885772BC01F6C001C5A83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B26885852BC0372E001C5A83 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B284E72E2BC07C7B0081F1F8 /* BottomNavIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavIconView.swift; sourceTree = "<group>"; };
 		B2DF2AD92BC0385E003FB000 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		B2DF2ADB2BC038BA003FB000 /* Figtree-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-Black.ttf"; sourceTree = "<group>"; };
 		B2DF2ADC2BC038BA003FB000 /* Figtree-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-Bold.ttf"; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				B2DF2AEA2BC05411003FB000 /* LinkCardListItemView.swift */,
 				B2DF2AEC2BC05AAE003FB000 /* RoundedButtonBig.swift */,
 				B2DF2AEE2BC05EE3003FB000 /* ChartView.swift */,
+				B284E72E2BC07C7B0081F1F8 /* BottomNavIconView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				B2DF2AED2BC05AAE003FB000 /* RoundedButtonBig.swift in Sources */,
 				B2DF2AE42BC0499F003FB000 /* OutlineButtonBig.swift in Sources */,
 				B2DF2AFA2BC07447003FB000 /* ProfileView.swift in Sources */,
+				B284E72F2BC07C7B0081F1F8 /* BottomNavIconView.swift in Sources */,
 				B2DF2AF42BC07327003FB000 /* MainTabView.swift in Sources */,
 				B2DF2AE02BC03F35003FB000 /* RoundedCorner.swift in Sources */,
 				B2DF2AEF2BC05EE3003FB000 /* ChartView.swift in Sources */,

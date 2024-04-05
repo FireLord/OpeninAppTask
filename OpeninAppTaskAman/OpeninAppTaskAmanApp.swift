@@ -11,7 +11,7 @@ import SwiftUI
 struct OpeninAppTaskAmanApp: App {
     var body: some Scene {
         WindowGroup {
-            DashboardView()
+            MainTabView()
         }
     }
 }

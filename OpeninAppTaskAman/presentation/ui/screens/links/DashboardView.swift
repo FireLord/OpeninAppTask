@@ -136,6 +136,7 @@ struct DashboardView: View {
                             )
                         }
                         .padding(.horizontal)
+                        .padding(.bottom, 150)
                         
                     }
                 }
