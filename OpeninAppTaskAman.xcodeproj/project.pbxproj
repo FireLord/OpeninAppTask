@@ -86,9 +86,11 @@
 		B268856F2BC01F6B001C5A83 /* OpeninAppTaskAman */ = {
 			isa = PBXGroup;
 			children = (
-				B2DF2AE52BC04B24003FB000 /* Info.plist */,
+				B284E7302BC0880A0081F1F8 /* data */,
+				B284E7312BC088120081F1F8 /* domain */,
 				B268857E2BC036C6001C5A83 /* presentation */,
 				B26885702BC01F6B001C5A83 /* OpeninAppTaskAmanApp.swift */,
+				B2DF2AE52BC04B24003FB000 /* Info.plist */,
 				B26885742BC01F6C001C5A83 /* Assets.xcassets */,
 				B26885762BC01F6C001C5A83 /* Preview Content */,
 			);
@@ -174,6 +176,20 @@
 			children = (
 			);
 			path = viewModel;
+			sourceTree = "<group>";
+		};
+		B284E7302BC0880A0081F1F8 /* data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		B284E7312BC088120081F1F8 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = domain;
 			sourceTree = "<group>";
 		};
 		B2DF2AF02BC06370003FB000 /* model */ = {

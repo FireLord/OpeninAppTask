@@ -47,7 +47,20 @@ struct DashboardView: View {
                     
                     ScrollView(.vertical, showsIndicators: false) {
                         // Greeting based on time
-                        Text("Good morning")
+                        let hour = Calendar.current.component(.hour, from: Date())
+                        var greeting: String {
+                            switch hour {
+                            case 6..<12:
+                                return "Good morning"
+                            case 12..<17:
+                                return "Good afternoon"
+                            case 17..<22:
+                                return "Good evening"
+                            default:
+                                return "Good night"
+                            }
+                        }
+                        Text(greeting)
                             .font(.figtreeFont(.regular, fontSize: .mediumTitle))
                             .foregroundColor(Color(hex: 0x999CA0))
                             .frame(maxWidth: .infinity, alignment: .leading)
