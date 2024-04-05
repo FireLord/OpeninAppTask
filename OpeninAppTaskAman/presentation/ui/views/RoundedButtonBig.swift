@@ -21,7 +21,7 @@ struct RoundedButtonBig: View {
                 .frame(width: 24, height: 24)
             
             Text(title)
-                .font(.figtreeFont(.regular, fontSize: .mediumTitle))
+                .font(.figtreeFont(.bold, fontSize: .mediumTitle))
                 .foregroundColor(.black)
             
             Spacer()

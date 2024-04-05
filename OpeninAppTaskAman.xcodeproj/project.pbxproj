@@ -149,7 +149,6 @@
 		B26885822BC03705001C5A83 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				B2DF2ADF2BC03F35003FB000 /* RoundedCorner.swift */,
 				B2DF2AE12BC04661003FB000 /* SourceCardView.swift */,
 				B2DF2AE32BC0499F003FB000 /* OutlineButtonBig.swift */,
 				B2DF2AE62BC04C03003FB000 /* RoundedButtonSmall.swift */,
@@ -164,6 +163,7 @@
 		B26885832BC0370D001C5A83 /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				B2DF2ADF2BC03F35003FB000 /* RoundedCorner.swift */,
 				B26885852BC0372E001C5A83 /* Color.swift */,
 			);
 			path = extension;

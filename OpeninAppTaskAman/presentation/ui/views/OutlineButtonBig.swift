@@ -19,7 +19,7 @@ struct OutlineButtonBig: View {
                 .frame(width: 20, height: 20)
             
             Text(title)
-                .font(.figtreeFont(.regular, fontSize: .mediumTitle))
+                .font(.figtreeFont(.bold, fontSize: .mediumTitle))
                 .foregroundColor(.black)
         }
         .frame(width: 358, height: 50)
