@@ -68,10 +68,47 @@ struct DashboardView: View {
                         .padding(.horizontal)
                         
                         // Line chart
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(.white)
-                            .frame(width: 360, height: 200)
-                            .padding()
+                        VStack {
+                            HStack {
+                                Text("Overview")
+                                    .font(.figtreeFont(.regular, fontSize: .smallTitle))
+                                    .foregroundColor(Color(hex: 0x999CA0))
+                                
+                                Spacer()
+                                
+                                Button {
+                                    
+                                } label: {
+                                    HStack {
+                                        Text("22 Aug - 23 Sept")
+                                            .font(.figtreeFont(.regular, fontSize: .largeBody))
+                                            .foregroundColor(.black)
+                                        
+                                        Image("clock")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 15, height: 15)
+                                    }
+                                    .padding(8)
+                                    .background(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .stroke(lineWidth: 1)
+                                        .foregroundColor(Color(hex: 0xEBEBEB))
+                                    )
+                                }
+                            }
+                            .padding(.horizontal)
+                            
+                            ChartView()
+                                .frame(height: 200)
+                                .clipShape(Rectangle())
+                        }
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(.white)
+                        )
+                        .padding()
                         
                         // Source cards
                         ScrollView(.horizontal, showsIndicators: false) {

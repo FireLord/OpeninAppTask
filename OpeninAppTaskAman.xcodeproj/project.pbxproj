@@ -21,6 +21,8 @@
 		B2DF2AE72BC04C03003FB000 /* RoundedButtonSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AE62BC04C03003FB000 /* RoundedButtonSmall.swift */; };
 		B2DF2AEB2BC05411003FB000 /* LinkCardListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AEA2BC05411003FB000 /* LinkCardListItemView.swift */; };
 		B2DF2AED2BC05AAE003FB000 /* RoundedButtonBig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AEC2BC05AAE003FB000 /* RoundedButtonBig.swift */; };
+		B2DF2AEF2BC05EE3003FB000 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AEE2BC05EE3003FB000 /* ChartView.swift */; };
+		B2DF2AF22BC0637C003FB000 /* PlotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AF12BC0637C003FB000 /* PlotData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		B2DF2AE62BC04C03003FB000 /* RoundedButtonSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonSmall.swift; sourceTree = "<group>"; };
 		B2DF2AEA2BC05411003FB000 /* LinkCardListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkCardListItemView.swift; sourceTree = "<group>"; };
 		B2DF2AEC2BC05AAE003FB000 /* RoundedButtonBig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonBig.swift; sourceTree = "<group>"; };
+		B2DF2AEE2BC05EE3003FB000 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		B2DF2AF12BC0637C003FB000 /* PlotData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 		B26885802BC036E9001C5A83 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				B2DF2AF02BC06370003FB000 /* model */,
 				B26885842BC03712001C5A83 /* viewModel */,
 				B26885832BC0370D001C5A83 /* extension */,
 				B26885822BC03705001C5A83 /* views */,
@@ -136,6 +141,7 @@
 				B2DF2AE62BC04C03003FB000 /* RoundedButtonSmall.swift */,
 				B2DF2AEA2BC05411003FB000 /* LinkCardListItemView.swift */,
 				B2DF2AEC2BC05AAE003FB000 /* RoundedButtonBig.swift */,
+				B2DF2AEE2BC05EE3003FB000 /* ChartView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -153,6 +159,14 @@
 			children = (
 			);
 			path = viewModel;
+			sourceTree = "<group>";
+		};
+		B2DF2AF02BC06370003FB000 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B2DF2AF12BC0637C003FB000 /* PlotData.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,10 +244,12 @@
 				B26885732BC01F6B001C5A83 /* DashboardView.swift in Sources */,
 				B2DF2AE72BC04C03003FB000 /* RoundedButtonSmall.swift in Sources */,
 				B26885712BC01F6B001C5A83 /* OpeninAppTaskAmanApp.swift in Sources */,
+				B2DF2AF22BC0637C003FB000 /* PlotData.swift in Sources */,
 				B2DF2AEB2BC05411003FB000 /* LinkCardListItemView.swift in Sources */,
 				B2DF2AED2BC05AAE003FB000 /* RoundedButtonBig.swift in Sources */,
 				B2DF2AE42BC0499F003FB000 /* OutlineButtonBig.swift in Sources */,
 				B2DF2AE02BC03F35003FB000 /* RoundedCorner.swift in Sources */,
+				B2DF2AEF2BC05EE3003FB000 /* ChartView.swift in Sources */,
 				B2DF2AE22BC04661003FB000 /* SourceCardView.swift in Sources */,
 				B2DF2ADA2BC0385E003FB000 /* FontExtension.swift in Sources */,
 				B26885862BC0372E001C5A83 /* Color.swift in Sources */,
