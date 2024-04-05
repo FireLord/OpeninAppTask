@@ -18,6 +18,8 @@
 		B2DF2AE02BC03F35003FB000 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2ADF2BC03F35003FB000 /* RoundedCorner.swift */; };
 		B2DF2AE22BC04661003FB000 /* SourceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AE12BC04661003FB000 /* SourceCardView.swift */; };
 		B2DF2AE42BC0499F003FB000 /* OutlineButtonBig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AE32BC0499F003FB000 /* OutlineButtonBig.swift */; };
+		B2DF2AE72BC04C03003FB000 /* RoundedButtonSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AE62BC04C03003FB000 /* RoundedButtonSmall.swift */; };
+		B2DF2AEB2BC05411003FB000 /* LinkCardListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AEA2BC05411003FB000 /* LinkCardListItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		B2DF2AE12BC04661003FB000 /* SourceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCardView.swift; sourceTree = "<group>"; };
 		B2DF2AE32BC0499F003FB000 /* OutlineButtonBig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineButtonBig.swift; sourceTree = "<group>"; };
 		B2DF2AE52BC04B24003FB000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B2DF2AE62BC04C03003FB000 /* RoundedButtonSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonSmall.swift; sourceTree = "<group>"; };
+		B2DF2AEA2BC05411003FB000 /* LinkCardListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkCardListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 				B2DF2ADF2BC03F35003FB000 /* RoundedCorner.swift */,
 				B2DF2AE12BC04661003FB000 /* SourceCardView.swift */,
 				B2DF2AE32BC0499F003FB000 /* OutlineButtonBig.swift */,
+				B2DF2AE62BC04C03003FB000 /* RoundedButtonSmall.swift */,
+				B2DF2AEA2BC05411003FB000 /* LinkCardListItemView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -219,7 +225,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B26885732BC01F6B001C5A83 /* DashboardView.swift in Sources */,
+				B2DF2AE72BC04C03003FB000 /* RoundedButtonSmall.swift in Sources */,
 				B26885712BC01F6B001C5A83 /* OpeninAppTaskAmanApp.swift in Sources */,
+				B2DF2AEB2BC05411003FB000 /* LinkCardListItemView.swift in Sources */,
 				B2DF2AE42BC0499F003FB000 /* OutlineButtonBig.swift in Sources */,
 				B2DF2AE02BC03F35003FB000 /* RoundedCorner.swift in Sources */,
 				B2DF2AE22BC04661003FB000 /* SourceCardView.swift in Sources */,

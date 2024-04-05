@@ -87,26 +87,26 @@ struct DashboardView: View {
                         Button {
                             print("HI! openinAppUser")
                         } label: {
-                            OutlineButtonBig()
+                            OutlineButtonBig(
+                                title: "View Analytics",
+                                icon: "analyticsArrow"
+                            )
                         }
                         .padding()
 
                         // Button selector header view
-                        HStack {
-                            Button {
-                                
-                            } label: {
-                                Text("Top Links")
-                                    .font(.figtreeFont(.regular, fontSize: .mediumTitle))
-                                    .foregroundColor(.white)
-                                    .frame(width: 100, height: 33)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 25)
-                                            .fill(Color(hex: 0x0E6FFF))
-                                        
-                                    )
+                        ButtonFilterHeaderView()
+                            .padding(.horizontal)
+                        
+                        // Links list limit 5 items (according to figma)
+                        LazyVStack {
+                            ForEach(1...5, id: \.self) { _ in
+                                LinkCardListItemView()
+                                    .padding(.bottom)
                             }
                         }
+                        
+                        // View All Links
                         
                     }
                 }
@@ -120,4 +120,49 @@ struct DashboardView: View {
 
 #Preview {
     DashboardView()
+}
+
+struct ButtonFilterHeaderView: View {
+    var body: some View {
+        HStack {
+            Button {
+                
+            } label: {
+                RoundedButtonSmall(
+                    title: "Top Links",
+                    color: Color(hex: 0x0E6FFF),
+                    fontColor: .white
+                )
+            }
+            
+            Button {
+                
+            } label: {
+                RoundedButtonSmall(
+                    title: "Recent Links",
+                    color: .clear,
+                    fontColor: Color(hex: 0x999CA0)
+                )
+            }
+            
+            Spacer()
+            
+            Button {
+                
+            } label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(lineWidth: 2)
+                        .foregroundColor(Color(hex: 0xEBEBEB))
+                        .frame(width: 40, height: 40)
+                    
+                    Image("search")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 20, height: 20)
+                }
+            }
+            .foregroundColor(.white)
+        }
+    }
 }

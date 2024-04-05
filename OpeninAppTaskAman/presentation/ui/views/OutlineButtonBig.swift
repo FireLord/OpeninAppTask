@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct OutlineButtonBig: View {
+    var title: String
+    var icon: String
+    
     var body: some View {
         HStack {
-            Image("analyticsArrow")
+            Image(icon)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 20, height: 20)
             
-            Text("View Analytics")
+            Text(title)
                 .font(.figtreeFont(.regular, fontSize: .mediumTitle))
                 .foregroundColor(.black)
         }
@@ -31,5 +34,5 @@ struct OutlineButtonBig: View {
 }
 
 #Preview {
-    OutlineButtonBig()
+    OutlineButtonBig(title: "View Analytics", icon: "analyticsArrow")
 }
