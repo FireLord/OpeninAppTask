@@ -112,10 +112,10 @@ struct DashboardView: View {
                         
                         // Source cards
                         ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                SourceCardView()
-                                SourceCardView()
-                                SourceCardView()
+                            LazyHStack {
+                                ForEach(1...3, id: \.self) { _ in
+                                    SourceCardView()
+                                }
                             }
                         }
                         .padding(.horizontal)
