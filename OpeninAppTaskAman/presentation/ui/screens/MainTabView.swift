@@ -57,7 +57,7 @@ struct MainTabView: View {
                             Circle()
                                 .fill(Color(hex: 0x0E6FFF))
                                 .frame(width: 60, height: 60)
-                                .shadow(color: Color(hex: 0x0E6FFF, alpha: 0.6), radius: 10, y: 5)
+                                .shadow(color: Color(hex: 0x0E6FFF, alpha: 0.6), radius: 5, y: 5)
                             
                             Image(systemName: "plus")
                                 .resizable()
