@@ -1,5 +1,5 @@
 //
-//  MainTabView.swift
+//  Campaigns.swift
 //  OpeninAppTaskAman
 //
 //  Created by Aman Kumar on 05/04/24.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct MainTabView: View {
+struct CampaignsView: View {
     var body: some View {
-        
+        Text("Hello, CampaignsView!")
     }
 }
 
 #Preview {
-    MainTabView()
+    CampaignsView()
 }

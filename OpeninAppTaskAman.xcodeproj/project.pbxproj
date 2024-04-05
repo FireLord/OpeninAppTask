@@ -24,6 +24,9 @@
 		B2DF2AEF2BC05EE3003FB000 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AEE2BC05EE3003FB000 /* ChartView.swift */; };
 		B2DF2AF22BC0637C003FB000 /* PlotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AF12BC0637C003FB000 /* PlotData.swift */; };
 		B2DF2AF42BC07327003FB000 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AF32BC07327003FB000 /* MainTabView.swift */; };
+		B2DF2AF62BC07426003FB000 /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AF52BC07426003FB000 /* CoursesView.swift */; };
+		B2DF2AF82BC0743A003FB000 /* CampaignsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AF72BC0743A003FB000 /* CampaignsView.swift */; };
+		B2DF2AFA2BC07447003FB000 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AF92BC07447003FB000 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		B2DF2AEE2BC05EE3003FB000 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		B2DF2AF12BC0637C003FB000 /* PlotData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotData.swift; sourceTree = "<group>"; };
 		B2DF2AF32BC07327003FB000 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		B2DF2AF52BC07426003FB000 /* CoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
+		B2DF2AF72BC0743A003FB000 /* CampaignsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignsView.swift; sourceTree = "<group>"; };
+		B2DF2AF92BC07447003FB000 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +135,10 @@
 		B26885812BC036F6001C5A83 /* screens */ = {
 			isa = PBXGroup;
 			children = (
-				B26885722BC01F6B001C5A83 /* DashboardView.swift */,
+				B2DF2AFB2BC07480003FB000 /* links */,
+				B2DF2AFC2BC07489003FB000 /* courses */,
+				B2DF2AFD2BC07493003FB000 /* campaigns */,
+				B2DF2AFE2BC074A0003FB000 /* profile */,
 				B2DF2AF32BC07327003FB000 /* MainTabView.swift */,
 			);
 			path = screens;
@@ -170,6 +179,38 @@
 				B2DF2AF12BC0637C003FB000 /* PlotData.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		B2DF2AFB2BC07480003FB000 /* links */ = {
+			isa = PBXGroup;
+			children = (
+				B26885722BC01F6B001C5A83 /* DashboardView.swift */,
+			);
+			path = links;
+			sourceTree = "<group>";
+		};
+		B2DF2AFC2BC07489003FB000 /* courses */ = {
+			isa = PBXGroup;
+			children = (
+				B2DF2AF52BC07426003FB000 /* CoursesView.swift */,
+			);
+			path = courses;
+			sourceTree = "<group>";
+		};
+		B2DF2AFD2BC07493003FB000 /* campaigns */ = {
+			isa = PBXGroup;
+			children = (
+				B2DF2AF72BC0743A003FB000 /* CampaignsView.swift */,
+			);
+			path = campaigns;
+			sourceTree = "<group>";
+		};
+		B2DF2AFE2BC074A0003FB000 /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				B2DF2AF92BC07447003FB000 /* ProfileView.swift */,
+			);
+			path = profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,12 +290,15 @@
 				B26885712BC01F6B001C5A83 /* OpeninAppTaskAmanApp.swift in Sources */,
 				B2DF2AF22BC0637C003FB000 /* PlotData.swift in Sources */,
 				B2DF2AEB2BC05411003FB000 /* LinkCardListItemView.swift in Sources */,
+				B2DF2AF62BC07426003FB000 /* CoursesView.swift in Sources */,
 				B2DF2AED2BC05AAE003FB000 /* RoundedButtonBig.swift in Sources */,
 				B2DF2AE42BC0499F003FB000 /* OutlineButtonBig.swift in Sources */,
+				B2DF2AFA2BC07447003FB000 /* ProfileView.swift in Sources */,
 				B2DF2AF42BC07327003FB000 /* MainTabView.swift in Sources */,
 				B2DF2AE02BC03F35003FB000 /* RoundedCorner.swift in Sources */,
 				B2DF2AEF2BC05EE3003FB000 /* ChartView.swift in Sources */,
 				B2DF2AE22BC04661003FB000 /* SourceCardView.swift in Sources */,
+				B2DF2AF82BC0743A003FB000 /* CampaignsView.swift in Sources */,
 				B2DF2ADA2BC0385E003FB000 /* FontExtension.swift in Sources */,
 				B26885862BC0372E001C5A83 /* Color.swift in Sources */,
 			);
