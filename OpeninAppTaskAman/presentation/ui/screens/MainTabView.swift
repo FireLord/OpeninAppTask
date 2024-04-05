@@ -33,6 +33,11 @@ struct MainTabView: View {
                         BottomNavIconView(title: "Links", icon: "linkIcon")
                     }
                     .opacity(index == 0 ? 1 : 0.1)
+                    .background {
+                        Rectangle()
+                            .fill(.white)
+                            .frame(width: 55, height: 55)
+                    }
                     
                     Spacer()
                     
@@ -42,6 +47,11 @@ struct MainTabView: View {
                         BottomNavIconView(title: "Courses", icon: "coursesIcon")
                     }
                     .opacity(index == 1 ? 1 : 0.1)
+                    .background {
+                        Rectangle()
+                            .fill(.white)
+                            .frame(width: 55, height: 55)
+                    }
                     .offset(x: 15)
                     
                     Spacer()
@@ -76,6 +86,11 @@ struct MainTabView: View {
                         BottomNavIconView(title: "Campaigns", icon: "campaignIcon")
                     }
                     .opacity(index == 2 ? 1 : 0.1)
+                    .background {
+                        Rectangle()
+                            .fill(.white)
+                            .frame(width: 55, height: 55)
+                    }
                     .offset(x: -15)
                     
                     Spacer()
@@ -86,6 +101,11 @@ struct MainTabView: View {
                         BottomNavIconView(title: "Profile", icon: "profileIcon")
                     }
                     .opacity(index == 3 ? 1 : 0.1)
+                    .background {
+                        Rectangle()
+                            .fill(.white)
+                            .frame(width: 55, height: 55)
+                    }
                 }
                 .padding(.horizontal, 35)
                 .background(.white)
