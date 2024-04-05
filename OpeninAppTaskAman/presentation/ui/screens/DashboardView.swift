@@ -144,7 +144,7 @@ struct DashboardView: View {
             }
             
         }
-        .background(.blue)
+        .background(Color(hex: 0x0E6FFF))
         .ignoresSafeArea()
     }
 }
