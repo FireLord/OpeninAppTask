@@ -87,8 +87,9 @@ struct DashboardView: View {
                         // Source cards
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack {
-                                ForEach(1...3, id: \.self) { _ in
-                                    SourceCardView()
+                                ForEach(Source.sampleExample) { source in
+                                    SourceCardView(source: source)
+                                        .padding(.trailing)
                                 }
                             }
                         }

@@ -13,6 +13,8 @@
 		B26885782BC01F6C001C5A83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B26885772BC01F6C001C5A83 /* Preview Assets.xcassets */; };
 		B26885862BC0372E001C5A83 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26885852BC0372E001C5A83 /* Color.swift */; };
 		B284E72F2BC07C7B0081F1F8 /* BottomNavIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B284E72E2BC07C7B0081F1F8 /* BottomNavIconView.swift */; };
+		B284E7342BC08B1C0081F1F8 /* OpeninAppAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B284E7332BC08B1C0081F1F8 /* OpeninAppAPIService.swift */; };
+		B284E7362BC0DF570081F1F8 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = B284E7352BC0DF570081F1F8 /* Source.swift */; };
 		B2DF2ADA2BC0385E003FB000 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF2AD92BC0385E003FB000 /* FontExtension.swift */; };
 		B2DF2ADD2BC038BA003FB000 /* Figtree-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2DF2ADB2BC038BA003FB000 /* Figtree-Black.ttf */; };
 		B2DF2ADE2BC038BA003FB000 /* Figtree-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2DF2ADC2BC038BA003FB000 /* Figtree-Bold.ttf */; };
@@ -38,6 +40,8 @@
 		B26885772BC01F6C001C5A83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B26885852BC0372E001C5A83 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B284E72E2BC07C7B0081F1F8 /* BottomNavIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavIconView.swift; sourceTree = "<group>"; };
+		B284E7332BC08B1C0081F1F8 /* OpeninAppAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeninAppAPIService.swift; sourceTree = "<group>"; };
+		B284E7352BC0DF570081F1F8 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		B2DF2AD92BC0385E003FB000 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		B2DF2ADB2BC038BA003FB000 /* Figtree-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-Black.ttf"; sourceTree = "<group>"; };
 		B2DF2ADC2BC038BA003FB000 /* Figtree-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-Bold.ttf"; sourceTree = "<group>"; };
@@ -127,7 +131,6 @@
 		B26885802BC036E9001C5A83 /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				B2DF2AF02BC06370003FB000 /* model */,
 				B26885842BC03712001C5A83 /* viewModel */,
 				B26885832BC0370D001C5A83 /* extension */,
 				B26885822BC03705001C5A83 /* views */,
@@ -181,6 +184,7 @@
 		B284E7302BC0880A0081F1F8 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				B284E7322BC08AF90081F1F8 /* api */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -192,10 +196,19 @@
 			path = domain;
 			sourceTree = "<group>";
 		};
+		B284E7322BC08AF90081F1F8 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				B284E7332BC08B1C0081F1F8 /* OpeninAppAPIService.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
 		B2DF2AF02BC06370003FB000 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				B2DF2AF12BC0637C003FB000 /* PlotData.swift */,
+				B284E7352BC0DF570081F1F8 /* Source.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -203,6 +216,7 @@
 		B2DF2AFB2BC07480003FB000 /* links */ = {
 			isa = PBXGroup;
 			children = (
+				B2DF2AF02BC06370003FB000 /* model */,
 				B26885722BC01F6B001C5A83 /* DashboardView.swift */,
 			);
 			path = links;
@@ -304,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B284E7362BC0DF570081F1F8 /* Source.swift in Sources */,
 				B26885732BC01F6B001C5A83 /* DashboardView.swift in Sources */,
 				B2DF2AE72BC04C03003FB000 /* RoundedButtonSmall.swift in Sources */,
 				B26885712BC01F6B001C5A83 /* OpeninAppTaskAmanApp.swift in Sources */,
@@ -317,6 +332,7 @@
 				B2DF2AF42BC07327003FB000 /* MainTabView.swift in Sources */,
 				B2DF2AE02BC03F35003FB000 /* RoundedCorner.swift in Sources */,
 				B2DF2AEF2BC05EE3003FB000 /* ChartView.swift in Sources */,
+				B284E7342BC08B1C0081F1F8 /* OpeninAppAPIService.swift in Sources */,
 				B2DF2AE22BC04661003FB000 /* SourceCardView.swift in Sources */,
 				B2DF2AF82BC0743A003FB000 /* CampaignsView.swift in Sources */,
 				B2DF2ADA2BC0385E003FB000 /* FontExtension.swift in Sources */,

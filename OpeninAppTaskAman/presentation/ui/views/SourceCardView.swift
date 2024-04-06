@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct SourceCardView: View {
+    var source: Source
+    
     var body: some View {
         VStack (alignment: .leading, spacing: 10){
-            Image("arrow")
+            Image(source.iconName)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 32, height: 32)
             
-            Text("123")
+            Text(source.name)
                 .font(.figtreeFont(.bold, fontSize: .mediumTitle))
             
-            Text("Today's clicks")
+            Text(source.description)
                 .font(.figtreeFont(.regular, fontSize: .smallTitle))
                 .foregroundColor(Color(hex: 0x999CA0))
         }
@@ -31,5 +33,5 @@ struct SourceCardView: View {
 }
 
 #Preview {
-    SourceCardView()
+    SourceCardView(source: Source.sampleExample.first!)
 }
