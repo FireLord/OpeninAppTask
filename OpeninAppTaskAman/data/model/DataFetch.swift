@@ -63,5 +63,5 @@ struct DataClass: Codable {
     let recent_links: [LinkData]
     let top_links: [LinkData]
     let favourite_links: [String]
-    let overall_url_chart: String?
+    let overall_url_chart: [String: Int]
 }

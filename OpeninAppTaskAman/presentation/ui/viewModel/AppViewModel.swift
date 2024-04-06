@@ -25,6 +25,7 @@ final class AppViewModel: ObservableObject {
             linkDataList = try await getRecentLinkUseCase.execute()
             isLoading = false
         } catch {
+            print("\(error.localizedDescription)")
             if let urlError = error as? URLError, urlError.code == .notConnectedToInternet {
                 alertItem = AlertContext.noInternetConnection
             } else if let scError = error as? APIError {
