@@ -14,6 +14,13 @@
 		B26885862BC0372E001C5A83 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26885852BC0372E001C5A83 /* Color.swift */; };
 		B270EEBD2BC0E2EE007A5256 /* DataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270EEBC2BC0E2EE007A5256 /* DataFetch.swift */; };
 		B270EEC52BC0E62A007A5256 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270EEC42BC0E62A007A5256 /* APIError.swift */; };
+		B270EECA2BC0E8E9007A5256 /* LinkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270EEC92BC0E8E9007A5256 /* LinkRepository.swift */; };
+		B270EECC2BC0E93A007A5256 /* GetRecentLinkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270EECB2BC0E93A007A5256 /* GetRecentLinkUseCase.swift */; };
+		B270EECE2BC0E991007A5256 /* GetTopLinkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270EECD2BC0E991007A5256 /* GetTopLinkUseCase.swift */; };
+		B270EED22BC0E9FB007A5256 /* LinkRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270EED12BC0E9FB007A5256 /* LinkRepositoryImpl.swift */; };
+		B270EED42BC0EA30007A5256 /* LinkRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270EED32BC0EA30007A5256 /* LinkRemoteDataSource.swift */; };
+		B270EED62BC0EA70007A5256 /* LinkRemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270EED52BC0EA70007A5256 /* LinkRemoteDataSourceImpl.swift */; };
+		B270EED82BC0EB29007A5256 /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270EED72BC0EB29007A5256 /* AlertItem.swift */; };
 		B284E72F2BC07C7B0081F1F8 /* BottomNavIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B284E72E2BC07C7B0081F1F8 /* BottomNavIconView.swift */; };
 		B284E7342BC08B1C0081F1F8 /* OpeninAppAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B284E7332BC08B1C0081F1F8 /* OpeninAppAPIService.swift */; };
 		B284E7362BC0DF570081F1F8 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = B284E7352BC0DF570081F1F8 /* Source.swift */; };
@@ -43,6 +50,13 @@
 		B26885852BC0372E001C5A83 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B270EEBC2BC0E2EE007A5256 /* DataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetch.swift; sourceTree = "<group>"; };
 		B270EEC42BC0E62A007A5256 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		B270EEC92BC0E8E9007A5256 /* LinkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkRepository.swift; sourceTree = "<group>"; };
+		B270EECB2BC0E93A007A5256 /* GetRecentLinkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecentLinkUseCase.swift; sourceTree = "<group>"; };
+		B270EECD2BC0E991007A5256 /* GetTopLinkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTopLinkUseCase.swift; sourceTree = "<group>"; };
+		B270EED12BC0E9FB007A5256 /* LinkRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkRepositoryImpl.swift; sourceTree = "<group>"; };
+		B270EED32BC0EA30007A5256 /* LinkRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkRemoteDataSource.swift; sourceTree = "<group>"; };
+		B270EED52BC0EA70007A5256 /* LinkRemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkRemoteDataSourceImpl.swift; sourceTree = "<group>"; };
+		B270EED72BC0EB29007A5256 /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		B284E72E2BC07C7B0081F1F8 /* BottomNavIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavIconView.swift; sourceTree = "<group>"; };
 		B284E7332BC08B1C0081F1F8 /* OpeninAppAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeninAppAPIService.swift; sourceTree = "<group>"; };
 		B284E7352BC0DF570081F1F8 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
@@ -165,6 +179,7 @@
 				B2DF2AEC2BC05AAE003FB000 /* RoundedButtonBig.swift */,
 				B2DF2AEE2BC05EE3003FB000 /* ChartView.swift */,
 				B284E72E2BC07C7B0081F1F8 /* BottomNavIconView.swift */,
+				B270EED72BC0EB29007A5256 /* AlertItem.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -204,8 +219,44 @@
 		B270EEC62BC0E890007A5256 /* repository */ = {
 			isa = PBXGroup;
 			children = (
+				B270EECF2BC0E9BC007A5256 /* dataSource */,
+				B270EED02BC0E9D7007A5256 /* dataSourceImpl */,
+				B270EED12BC0E9FB007A5256 /* LinkRepositoryImpl.swift */,
 			);
 			path = repository;
+			sourceTree = "<group>";
+		};
+		B270EEC72BC0E8C4007A5256 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				B270EEC92BC0E8E9007A5256 /* LinkRepository.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		B270EEC82BC0E8CD007A5256 /* usecase */ = {
+			isa = PBXGroup;
+			children = (
+				B270EECB2BC0E93A007A5256 /* GetRecentLinkUseCase.swift */,
+				B270EECD2BC0E991007A5256 /* GetTopLinkUseCase.swift */,
+			);
+			path = usecase;
+			sourceTree = "<group>";
+		};
+		B270EECF2BC0E9BC007A5256 /* dataSource */ = {
+			isa = PBXGroup;
+			children = (
+				B270EED32BC0EA30007A5256 /* LinkRemoteDataSource.swift */,
+			);
+			path = dataSource;
+			sourceTree = "<group>";
+		};
+		B270EED02BC0E9D7007A5256 /* dataSourceImpl */ = {
+			isa = PBXGroup;
+			children = (
+				B270EED52BC0EA70007A5256 /* LinkRemoteDataSourceImpl.swift */,
+			);
+			path = dataSourceImpl;
 			sourceTree = "<group>";
 		};
 		B284E7302BC0880A0081F1F8 /* data */ = {
@@ -222,6 +273,8 @@
 		B284E7312BC088120081F1F8 /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				B270EEC72BC0E8C4007A5256 /* repository */,
+				B270EEC82BC0E8CD007A5256 /* usecase */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -352,17 +405,24 @@
 				B26885732BC01F6B001C5A83 /* DashboardView.swift in Sources */,
 				B2DF2AE72BC04C03003FB000 /* RoundedButtonSmall.swift in Sources */,
 				B26885712BC01F6B001C5A83 /* OpeninAppTaskAmanApp.swift in Sources */,
+				B270EECE2BC0E991007A5256 /* GetTopLinkUseCase.swift in Sources */,
 				B2DF2AF22BC0637C003FB000 /* PlotData.swift in Sources */,
+				B270EECC2BC0E93A007A5256 /* GetRecentLinkUseCase.swift in Sources */,
 				B2DF2AEB2BC05411003FB000 /* LinkCardListItemView.swift in Sources */,
+				B270EED22BC0E9FB007A5256 /* LinkRepositoryImpl.swift in Sources */,
 				B270EEBD2BC0E2EE007A5256 /* DataFetch.swift in Sources */,
+				B270EED42BC0EA30007A5256 /* LinkRemoteDataSource.swift in Sources */,
 				B2DF2AF62BC07426003FB000 /* CoursesView.swift in Sources */,
 				B2DF2AED2BC05AAE003FB000 /* RoundedButtonBig.swift in Sources */,
 				B2DF2AE42BC0499F003FB000 /* OutlineButtonBig.swift in Sources */,
 				B2DF2AFA2BC07447003FB000 /* ProfileView.swift in Sources */,
+				B270EECA2BC0E8E9007A5256 /* LinkRepository.swift in Sources */,
+				B270EED62BC0EA70007A5256 /* LinkRemoteDataSourceImpl.swift in Sources */,
 				B284E72F2BC07C7B0081F1F8 /* BottomNavIconView.swift in Sources */,
 				B2DF2AF42BC07327003FB000 /* MainTabView.swift in Sources */,
 				B2DF2AE02BC03F35003FB000 /* RoundedCorner.swift in Sources */,
 				B2DF2AEF2BC05EE3003FB000 /* ChartView.swift in Sources */,
+				B270EED82BC0EB29007A5256 /* AlertItem.swift in Sources */,
 				B284E7342BC08B1C0081F1F8 /* OpeninAppAPIService.swift in Sources */,
 				B2DF2AE22BC04661003FB000 /* SourceCardView.swift in Sources */,
 				B2DF2AF82BC0743A003FB000 /* CampaignsView.swift in Sources */,
