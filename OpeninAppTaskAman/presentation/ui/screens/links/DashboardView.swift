@@ -135,6 +135,11 @@ struct DashboardView: View {
                                 }
                             }
                         }
+                        .alert(item: $appViewModel.alertItem) { alertItem in
+                            Alert(title: alertItem.title,
+                                  message: alertItem.message,
+                                  dismissButton: alertItem.dismissButton)
+                        }
                         
                         // View All Links
                         Button {
