@@ -129,17 +129,17 @@ struct DashboardView: View {
                         }
                         .task {
                             Task {
-                                await appViewModel.getRecentLinkList()
+                                await appViewModel.getTopLinkList()
                             }
                         }
                         .onChange(of: appViewModel.isTopLinkSelected) { newValue in
                             if newValue {
                                 Task {
-                                    await appViewModel.getRecentLinkList()
+                                    await appViewModel.getTopLinkList()
                                 }
                             } else {
                                 Task {
-                                    await appViewModel.getTopLinkList()
+                                    await appViewModel.getRecentLinkList()
                                 }
                             }
                         }
@@ -183,6 +183,13 @@ struct DashboardView: View {
                         .padding(.horizontal)
                         .padding(.bottom, 150)
                         
+                    }
+                    .refreshable {
+                        Task {
+                            appViewModel.isTopLinkSelected ? await appViewModel.getTopLinkList() : await appViewModel.getRecentLinkList()
+                            
+                            await appViewModel.getSourceData()
+                        }
                     }
                 }
             }

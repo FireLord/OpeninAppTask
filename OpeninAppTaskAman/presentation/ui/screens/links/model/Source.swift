@@ -14,8 +14,8 @@ struct Source: Hashable, Identifiable {
     let description: String
     
     static let sampleExample: [Source] = [
-        Source(name: "123", iconName: "arrow", description: "Today's clicks"),
-        Source(name: "Ahmedabad", iconName: "map", description: "Top Location"),
-        Source(name: "Instagram", iconName: "globe", description: "Top Source")
+        Source(name: "--", iconName: "arrow", description: "Today's clicks"),
+        Source(name: "--", iconName: "map", description: "Top Location"),
+        Source(name: "--", iconName: "globe", description: "Top Source")
     ]
 }
