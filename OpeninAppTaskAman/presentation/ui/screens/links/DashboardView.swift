@@ -113,6 +113,9 @@ struct DashboardView: View {
                             .padding(.horizontal)
                         
                         // Links list limit 5 items (according to figma)
+                        if appViewModel.isLoading {
+                            ProgressView()
+                        }
                         LazyVStack {
                             ForEach(appViewModel.linkDataList) { linkData in
                                 LinkCardListItemView(linkData: linkData)

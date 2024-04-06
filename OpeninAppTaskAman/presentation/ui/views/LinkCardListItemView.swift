@@ -18,18 +18,28 @@ struct LinkCardListItemView: View {
                     switch phase {
                     case .empty:
                         ProgressView() // Placeholder while loading
+                        
                     case .success(let image):
                         image
                             .resizable()
                             .scaledToFit()
                             .frame(width: 48, height: 48)
                             .clipShape(RoundedRectangle(cornerRadius: 8))
-                    case .failure(_):
+                        
+                    case .failure:
                         Image("amazonIcon") // Placeholder for failure/error
                             .resizable()
                             .scaledToFit()
                             .frame(width: 48, height: 48)
                             .clipShape(RoundedRectangle(cornerRadius: 8))
+                    
+                    default:
+                        Image("amazonIcon") // Placeholder for failure/error
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 48, height: 48)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                        
                     }
                 }
                 
