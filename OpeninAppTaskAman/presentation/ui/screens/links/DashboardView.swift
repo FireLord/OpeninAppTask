@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DashboardView: View {
+    @EnvironmentObject var appViewModel: AppViewModel
+    
     var body: some View {
         ZStack {
             VStack {
@@ -112,9 +114,25 @@ struct DashboardView: View {
                         
                         // Links list limit 5 items (according to figma)
                         LazyVStack {
-                            ForEach(1...5, id: \.self) { _ in
-                                LinkCardListItemView()
+                            ForEach(appViewModel.linkDataList) { linkData in
+                                LinkCardListItemView(linkData: linkData)
                                     .padding(.bottom)
+                            }
+                        }
+                        .task {
+                            Task {
+                                await appViewModel.getRecentLinkList()
+                            }
+                        }
+                        .onChange(of: appViewModel.isTopLinkSelected) { newValue in
+                            if newValue {
+                                Task {
+                                    await appViewModel.getRecentLinkList()
+                                }
+                            } else {
+                                Task {
+                                    await appViewModel.getTopLinkList()
+                                }
                             }
                         }
                         
@@ -163,29 +181,31 @@ struct DashboardView: View {
 }
 
 #Preview {
-    DashboardView()
+    DashboardView().environmentObject(AppViewModel())
 }
 
 struct ButtonFilterHeaderView: View {
+    @EnvironmentObject var appViewModel: AppViewModel
+    
     var body: some View {
         HStack {
             Button {
-                
+                appViewModel.isTopLinkSelected = true
             } label: {
                 RoundedButtonSmall(
                     title: "Top Links",
-                    color: Color(hex: 0x0E6FFF),
-                    fontColor: .white
+                    color: appViewModel.isTopLinkSelected ? Color(hex: 0x0E6FFF) : .clear,
+                    fontColor: appViewModel.isTopLinkSelected ? .white : Color(hex: 0x999CA0)
                 )
             }
             
             Button {
-                
+                appViewModel.isTopLinkSelected = false
             } label: {
                 RoundedButtonSmall(
                     title: "Recent Links",
-                    color: .clear,
-                    fontColor: Color(hex: 0x999CA0)
+                    color: appViewModel.isTopLinkSelected ? .clear : Color(hex: 0x0E6FFF),
+                    fontColor: appViewModel.isTopLinkSelected ? Color(hex: 0x999CA0) : .white
                 )
             }
             

@@ -8,20 +8,36 @@
 import SwiftUI
 
 struct LinkCardListItemView: View {
+    var linkData: LinkData
+    
     var body: some View {
         VStack {
             HStack {
-                Image("amazonIcon")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 48, height: 48)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                AsyncImage(url: URL(string: linkData.original_image)) { phase in
+                    switch phase {
+                    case .empty:
+                        ProgressView() // Placeholder while loading
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 48, height: 48)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                    case .failure(_):
+                        Image("amazonIcon") // Placeholder for failure/error
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 48, height: 48)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                    }
+                }
                 
                 VStack(alignment: .leading) {
-                    Text("Sample link name...")
+                    Text(linkData.title)
                         .font(.figtreeFont(.regular, fontSize: .smallTitle))
+                        .lineLimit(1)
                     
-                    Text("22 Aug 2022")
+                    Text("\(convertDateString(linkData.created_at) ?? "22 Aug 2022")")
                         .font(.figtreeFont(.regular, fontSize: .largeBody))
                         .foregroundColor(Color(hex: 0x999CA0))
                 }
@@ -29,7 +45,7 @@ struct LinkCardListItemView: View {
                 Spacer()
                 
                 VStack {
-                    Text("2323")
+                    Text("\(linkData.total_clicks)")
                         .font(.figtreeFont(.bold, fontSize: .smallTitle))
                     
                     Text("Clicks")
@@ -41,7 +57,14 @@ struct LinkCardListItemView: View {
             
             // Link card
             HStack {
-                Text("https://samplelink.oia.bio/ashd...")
+                Text(linkData.web_link)
+                    .font(.figtreeFont(.regular, fontSize: .smallTitle))
+                    .foregroundColor(Color(hex: 0x0E6FFF))
+                    .lineLimit(1)
+                    .onTapGesture {
+                        guard let url = URL(string: linkData.web_link) else { return }
+                        UIApplication.shared.open(url)
+                    }
                 
                 Spacer()
                 
@@ -71,5 +94,19 @@ struct LinkCardListItemView: View {
 }
 
 #Preview {
-    LinkCardListItemView().background(Color(hex: 0xF5F5F5))
+    LinkCardListItemView(linkData: LinkData.sampleExample).background(Color(hex: 0xF5F5F5))
+}
+
+func convertDateString(_ dateString: String) -> String? {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    
+    guard let date = dateFormatter.date(from: dateString) else {
+        return nil // Return nil if unable to parse the date
+    }
+    
+    dateFormatter.dateFormat = "dd MMM yyyy"
+    let formattedDate = dateFormatter.string(from: date)
+    
+    return formattedDate
 }

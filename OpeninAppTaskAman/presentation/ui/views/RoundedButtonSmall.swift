@@ -16,7 +16,7 @@ struct RoundedButtonSmall: View {
         Text(title)
             .font(.figtreeFont(.bold, fontSize: .mediumTitle))
             .foregroundColor(fontColor)
-            .frame(width: 100, height: 33)
+            .frame(width: 120, height: 33)
             .background(
                 RoundedRectangle(cornerRadius: 25)
                     .fill(color)

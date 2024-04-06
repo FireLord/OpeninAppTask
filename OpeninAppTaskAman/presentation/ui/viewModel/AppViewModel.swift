@@ -13,6 +13,7 @@ final class AppViewModel: ObservableObject {
     @Published var linkDataList: [LinkData] = []
     @Published var alertItem: AlertItem?
     @Published var isLoading: Bool = false
+    @Published var isTopLinkSelected = true
     
     // MARK: API usecase
     private let getRecentLinkUseCase = GetRecentLinkUseCase(linkRepository: LinkRepositoryImpl(linkRemoteDataSource: LinkRemoteDataSourceImpl()))

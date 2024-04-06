@@ -24,7 +24,8 @@ struct DataFetch: Decodable {
     let data: DataClass
 }
 
-struct LinkData: Codable {
+struct LinkData: Codable, Identifiable {
+    var id: Int { url_id }
     let url_id: Int
     let web_link: String
     let smart_link: String
@@ -39,6 +40,23 @@ struct LinkData: Codable {
     let url_suffix: String
     let app: String
     let is_favourite: Bool
+    
+    static var sampleExample: LinkData = LinkData(
+        url_id: 146110,
+        web_link: "https://inopenapp.com/estt3",
+        smart_link: "inopenapp.com/estt3",
+        title: "Dailyhunt",
+        total_clicks: 100,
+        original_image: "https://m.dailyhunt.in/assets/img/apple-touch-icon-72x72.png?mode=pwa&ver=2.0.76",
+        thumbnail: nil,
+        times_ago: "1 yr ago",
+        created_at: "2023-03-09T08:00:05.000Z",
+        domain_id: "inopenapp.com/",
+        url_prefix: nil,
+        url_suffix: "estt3",
+        app: "dailyhunt",
+        is_favourite: false
+    )
 }
 
 struct DataClass: Codable {
