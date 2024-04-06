@@ -11,4 +11,5 @@ protocol LinkRepository {
     // MARK: API calling functions
     func getAllRecentLink() async throws -> [LinkData]
     func getAllTopLink() async throws -> [LinkData]
+    func getSourceData() async throws -> DataFetch
 }

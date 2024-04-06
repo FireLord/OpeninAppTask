@@ -21,4 +21,9 @@ final class LinkRepositoryImpl: LinkRepository {
     func getAllTopLink() async throws -> [LinkData] {
         return try await linkRemoteDataSource.getAllTopLink()
     }
+    
+    func getSourceData() async throws -> DataFetch {
+        return try await linkRemoteDataSource.getSourceData()
+    }
+    
 }

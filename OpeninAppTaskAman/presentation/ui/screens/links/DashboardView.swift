@@ -89,13 +89,18 @@ struct DashboardView: View {
                         // Source cards
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack {
-                                ForEach(Source.sampleExample) { source in
+                                ForEach(appViewModel.sourceDataList) { source in
                                     SourceCardView(source: source)
                                         .padding(.trailing)
                                 }
                             }
                         }
                         .padding(.horizontal)
+                        .task {
+                            Task {
+                                await appViewModel.getSourceData()
+                            }
+                        }
                         
                         // Analytics button
                         Button {

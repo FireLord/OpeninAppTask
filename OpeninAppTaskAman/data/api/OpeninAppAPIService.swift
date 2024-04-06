@@ -58,4 +58,27 @@ final class OpeninAppAPIService {
             throw APIError.invalidData
         }
     }
+    
+    func getSourceData() async throws ->  DataFetch {
+        guard let url = URL(string: newDashboard) else {
+            throw APIError.invalidURL
+        }
+        
+        var request = URLRequest(url: url)
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw APIError.invalidResponse
+        }
+        
+        do {
+            let decoder = JSONDecoder()
+            let decodeResponse = try decoder.decode(DataFetch.self, from: data)
+            return decodeResponse
+        } catch {
+            throw APIError.invalidData
+        }
+    }
 }

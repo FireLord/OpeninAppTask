@@ -15,4 +15,8 @@ final class LinkRemoteDataSourceImpl: LinkRemoteDataSource {
     func getAllTopLink() async throws -> [LinkData] {
         return try await OpeninAppAPIService.shared.getAllTopData()
     }
+    
+    func getSourceData() async throws -> DataFetch {
+        return try await OpeninAppAPIService.shared.getSourceData()
+    }
 }
