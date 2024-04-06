@@ -83,7 +83,7 @@ struct DashboardView: View {
                         .padding(.horizontal)
                         
                         // Line chart
-                        LineChartView()
+                        LineChartView(appViewModel: appViewModel)
                             .padding()
                         
                         // Source cards
@@ -114,7 +114,7 @@ struct DashboardView: View {
                         .padding()
 
                         // Button selector header view
-                        ButtonFilterHeaderView()
+                        ButtonFilterHeaderView(appViewModel: appViewModel)
                             .padding(.horizontal)
                         
                         // Links list limit 5 items (according to figma)
@@ -205,7 +205,7 @@ struct DashboardView: View {
 }
 
 struct ButtonFilterHeaderView: View {
-    @EnvironmentObject var appViewModel: AppViewModel
+    @ObservedObject var appViewModel: AppViewModel
     
     var body: some View {
         HStack {
@@ -252,6 +252,8 @@ struct ButtonFilterHeaderView: View {
 }
 
 struct LineChartView: View {
+    @ObservedObject var appViewModel: AppViewModel
+    
     var body: some View {
         VStack {
             HStack {
@@ -284,9 +286,15 @@ struct LineChartView: View {
             }
             .padding(.horizontal)
             
-            ChartView()
+            ChartView(plotDataList: appViewModel.plotDataList)
                 .frame(height: 200)
                 .clipShape(Rectangle())
+                .overlay {
+                    if appViewModel.isLoading {
+                        ProgressView()
+                            .scaleEffect(2)
+                    }
+                }
         }
         .padding()
         .background(

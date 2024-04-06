@@ -9,15 +9,14 @@ import SwiftUI
 import Charts
 
 struct ChartView: View {
-    @EnvironmentObject var appViewModel: AppViewModel
-    
+    let plotDataList: [PlotData]
     let linearGradient = LinearGradient(gradient: Gradient(colors: [Color(hex: 0x0E6FFF),
                                                                     Color(hex: 0x0E6FFF, alpha: 0)]),
                                         startPoint: .top,
                                         endPoint: .bottom)
     var body: some View {
         Chart {
-            ForEach(appViewModel.plotDataList) { data in
+            ForEach(plotDataList) { data in
                 LineMark(x: .value("Month", data.month),
                          y: .value("Value", data.value))
                 .lineStyle(StrokeStyle(lineWidth: 3))
@@ -25,7 +24,7 @@ struct ChartView: View {
             }
             .interpolationMethod(.cardinal(tension: 0.9))
             
-            ForEach(PlotData.sampleExample) { data in
+            ForEach(plotDataList) { data in
                 AreaMark(x: .value("Month", data.month),
                          y: .value("Value", data.value))
             }
@@ -36,7 +35,7 @@ struct ChartView: View {
             AxisMarks(position: .leading)
         }
         .chartXAxis {
-            AxisMarks(values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) { value in
+            AxisMarks(values: availableMonth(plotDataList: plotDataList) ) { value in
                 AxisGridLine()
                 AxisTick()
                 if let month = value.as(Int.self) {
@@ -52,7 +51,7 @@ struct ChartView: View {
 }
 
 #Preview {
-    ChartView().environmentObject(AppViewModel())
+    ChartView(plotDataList: PlotData.sampleExample)
 }
 
 func monthName(for monthNumber: Int) -> String {
@@ -71,4 +70,21 @@ func monthName(for monthNumber: Int) -> String {
     case 12: return "Dec"
     default: return ""
     }
+}
+
+func availableMonth(plotDataList: [PlotData]) -> [Int]{
+    var xValues = Set<Int>()
+
+    // Extract unique month indices from plotDataList
+    for plotData in plotDataList {
+        xValues.insert(plotData.month)
+    }
+
+    // Convert the Set to an array and sort it
+    var xValueArray = Array(xValues)
+    xValueArray.append(0)
+    xValueArray.append(13)
+    xValueArray.sort()
+    
+    return xValueArray
 }

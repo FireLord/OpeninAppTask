@@ -28,10 +28,22 @@ final class AppViewModel: ObservableObject {
             // MARK: We can call the getSourceDataUseCase like this getSourceDataUseCase.execute().data.recent_links
             // MARK: but im making it different for future use like calling another api url
             linkDataList = try await getRecentLinkUseCase.execute()
-            plotDataList = []
+            var consolidatedData = [Int: Double]()
             for item in linkDataList {
-                plotDataList.append(PlotData(month: getMonthIndex(from: item.created_at) ?? 0, value: Double(item.total_clicks)))
+                if let month = getMonthIndex(from: item.created_at) {
+                    let value = Double(item.total_clicks)
+                    if let existingValue = consolidatedData[month] {
+                        consolidatedData[month] = existingValue + value
+                    } else {
+                        consolidatedData[month] = value
+                    }
+                }
             }
+            
+            plotDataList = []
+            plotDataList = consolidatedData.map { PlotData(month: $0.key, value: $0.value) }
+                .sorted { $0.month < $1.month }
+            print("PlotdataRecentList: \(plotDataList)")
             isLoading = false
         } catch {
             print("\(error.localizedDescription)")
@@ -55,10 +67,22 @@ final class AppViewModel: ObservableObject {
         isLoading = true
         do {
             linkDataList = try await getTopLinkUseCase.execute()
-            plotDataList = []
+            var consolidatedData = [Int: Double]()
             for item in linkDataList {
-                plotDataList.append(PlotData(month: getMonthIndex(from: item.created_at) ?? 0, value: Double(item.total_clicks)))
+                if let month = getMonthIndex(from: item.created_at) {
+                    let value = Double(item.total_clicks)
+                    if let existingValue = consolidatedData[month] {
+                        consolidatedData[month] = existingValue + value
+                    } else {
+                        consolidatedData[month] = value
+                    }
+                }
             }
+            
+            plotDataList = []
+            plotDataList = consolidatedData.map { PlotData(month: $0.key, value: $0.value) }
+                .sorted { $0.month < $1.month }
+            print("PlotdataTopList: \(plotDataList)")
             isLoading = false
         } catch {
             if let urlError = error as? URLError, urlError.code == .notConnectedToInternet {
