@@ -9,13 +9,15 @@ import SwiftUI
 import Charts
 
 struct ChartView: View {
+    @EnvironmentObject var appViewModel: AppViewModel
+    
     let linearGradient = LinearGradient(gradient: Gradient(colors: [Color(hex: 0x0E6FFF),
                                                                     Color(hex: 0x0E6FFF, alpha: 0)]),
                                         startPoint: .top,
                                         endPoint: .bottom)
     var body: some View {
         Chart {
-            ForEach(PlotData.sampleExample) { data in
+            ForEach(appViewModel.plotDataList) { data in
                 LineMark(x: .value("Month", data.month),
                          y: .value("Value", data.value))
                 .lineStyle(StrokeStyle(lineWidth: 3))
@@ -50,7 +52,7 @@ struct ChartView: View {
 }
 
 #Preview {
-    ChartView()
+    ChartView().environmentObject(AppViewModel())
 }
 
 func monthName(for monthNumber: Int) -> String {

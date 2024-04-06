@@ -15,6 +15,7 @@ final class AppViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var isTopLinkSelected = true
     @Published var sourceDataList = Source.sampleExample
+    @Published var plotDataList: [PlotData] = []
     
     // MARK: API usecase
     private let getRecentLinkUseCase = GetRecentLinkUseCase(linkRepository: LinkRepositoryImpl(linkRemoteDataSource: LinkRemoteDataSourceImpl()))
@@ -27,6 +28,10 @@ final class AppViewModel: ObservableObject {
             // MARK: We can call the getSourceDataUseCase like this getSourceDataUseCase.execute().data.recent_links
             // MARK: but im making it different for future use like calling another api url
             linkDataList = try await getRecentLinkUseCase.execute()
+            plotDataList = []
+            for item in linkDataList {
+                plotDataList.append(PlotData(month: getMonthIndex(from: item.created_at) ?? 0, value: Double(item.total_clicks)))
+            }
             isLoading = false
         } catch {
             print("\(error.localizedDescription)")
@@ -50,6 +55,10 @@ final class AppViewModel: ObservableObject {
         isLoading = true
         do {
             linkDataList = try await getTopLinkUseCase.execute()
+            plotDataList = []
+            for item in linkDataList {
+                plotDataList.append(PlotData(month: getMonthIndex(from: item.created_at) ?? 0, value: Double(item.total_clicks)))
+            }
             isLoading = false
         } catch {
             if let urlError = error as? URLError, urlError.code == .notConnectedToInternet {
@@ -93,5 +102,17 @@ final class AppViewModel: ObservableObject {
             }
             isLoading = false
         }
+    }
+    
+    func getMonthIndex(from dateString: String) -> Int? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        
+        guard let date = dateFormatter.date(from: dateString) else { return nil }
+        
+        let calendar = Calendar.current
+        let month = calendar.component(.month, from: date)
+        
+        return month
     }
 }
