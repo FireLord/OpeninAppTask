@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LinkCardListItemView: View {
+    @State private var isLinkCopied = false
     var linkData: LinkData
     
     var body: some View {
@@ -68,10 +69,15 @@ struct LinkCardListItemView: View {
                 
                 Spacer()
                 
-                Image("copyIcon")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 20, height: 20)
+                Button {
+                    UIPasteboard.general.string = linkData.web_link
+                    isLinkCopied.toggle()
+                } label: {
+                    Image("copyIcon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 20, height: 20)
+                }
             }
             .padding()
             .background(
@@ -84,6 +90,9 @@ struct LinkCardListItemView: View {
                     .cornerRadius(8, corners: [.bottomLeft, .bottomRight])
             )
             
+        }
+        .alert(isPresented: $isLinkCopied) {
+            Alert(title: Text("Link Copied!"), message: nil, dismissButton: .default(Text("OK")))
         }
         .background(
             RoundedRectangle(cornerRadius: 9)
