@@ -12,6 +12,8 @@
 		B26885752BC01F6C001C5A83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B26885742BC01F6C001C5A83 /* Assets.xcassets */; };
 		B26885782BC01F6C001C5A83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B26885772BC01F6C001C5A83 /* Preview Assets.xcassets */; };
 		B26885862BC0372E001C5A83 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26885852BC0372E001C5A83 /* Color.swift */; };
+		B270EEBD2BC0E2EE007A5256 /* DataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270EEBC2BC0E2EE007A5256 /* DataFetch.swift */; };
+		B270EEC52BC0E62A007A5256 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270EEC42BC0E62A007A5256 /* APIError.swift */; };
 		B284E72F2BC07C7B0081F1F8 /* BottomNavIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B284E72E2BC07C7B0081F1F8 /* BottomNavIconView.swift */; };
 		B284E7342BC08B1C0081F1F8 /* OpeninAppAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B284E7332BC08B1C0081F1F8 /* OpeninAppAPIService.swift */; };
 		B284E7362BC0DF570081F1F8 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = B284E7352BC0DF570081F1F8 /* Source.swift */; };
@@ -39,6 +41,8 @@
 		B26885742BC01F6C001C5A83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B26885772BC01F6C001C5A83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B26885852BC0372E001C5A83 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B270EEBC2BC0E2EE007A5256 /* DataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetch.swift; sourceTree = "<group>"; };
+		B270EEC42BC0E62A007A5256 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		B284E72E2BC07C7B0081F1F8 /* BottomNavIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavIconView.swift; sourceTree = "<group>"; };
 		B284E7332BC08B1C0081F1F8 /* OpeninAppAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeninAppAPIService.swift; sourceTree = "<group>"; };
 		B284E7352BC0DF570081F1F8 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
@@ -181,10 +185,36 @@
 			path = viewModel;
 			sourceTree = "<group>";
 		};
+		B270EEBB2BC0E2D7007A5256 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B270EEBC2BC0E2EE007A5256 /* DataFetch.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		B270EEC32BC0E604007A5256 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				B270EEC42BC0E62A007A5256 /* APIError.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		B270EEC62BC0E890007A5256 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
 		B284E7302BC0880A0081F1F8 /* data */ = {
 			isa = PBXGroup;
 			children = (
 				B284E7322BC08AF90081F1F8 /* api */,
+				B270EEBB2BC0E2D7007A5256 /* model */,
+				B270EEC62BC0E890007A5256 /* repository */,
+				B270EEC32BC0E604007A5256 /* util */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -324,6 +354,7 @@
 				B26885712BC01F6B001C5A83 /* OpeninAppTaskAmanApp.swift in Sources */,
 				B2DF2AF22BC0637C003FB000 /* PlotData.swift in Sources */,
 				B2DF2AEB2BC05411003FB000 /* LinkCardListItemView.swift in Sources */,
+				B270EEBD2BC0E2EE007A5256 /* DataFetch.swift in Sources */,
 				B2DF2AF62BC07426003FB000 /* CoursesView.swift in Sources */,
 				B2DF2AED2BC05AAE003FB000 /* RoundedButtonBig.swift in Sources */,
 				B2DF2AE42BC0499F003FB000 /* OutlineButtonBig.swift in Sources */,
@@ -337,6 +368,7 @@
 				B2DF2AF82BC0743A003FB000 /* CampaignsView.swift in Sources */,
 				B2DF2ADA2BC0385E003FB000 /* FontExtension.swift in Sources */,
 				B26885862BC0372E001C5A83 /* Color.swift in Sources */,
+				B270EEC52BC0E62A007A5256 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
